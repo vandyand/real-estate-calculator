@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Real Estate Investment Calculator | Analyze Property Investments Like a
+      Pro
+    </title>
+    <meta
+      name="description"
+      content="Free professional-grade calculator for real estate investors. Analyze cash flow, ROI, cap rates and more for your next property investment."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Real Estate Investment Calculator</h1>
+        <p class="tagline">
+          Make smarter investment decisions with professional-grade analytics
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="calculator-container">
+        <div class="calculator-tabs">
+          <button class="tab-button active" data-tab="mortgage">
+            Mortgage
+          </button>
+          <button class="tab-button" data-tab="cashflow">Cash Flow</button>
+          <button class="tab-button" data-tab="roi">ROI Analysis</button>
+          <button class="tab-button" data-tab="rehab">Rehab Estimator</button>
+        </div>
+
+        <div class="calculator-content">
+          <!-- Mortgage Calculator Tab -->
+          <div class="tab-content active" id="mortgage-tab">
+            <h2>Mortgage Calculator</h2>
+            <div class="calculator-grid">
+              <div class="input-group">
+                <label for="property-price">Property Price ($)</label>
+                <input type="number" id="property-price" value="300000" />
+              </div>
+              <div class="input-group">
+                <label for="down-payment">Down Payment (%)</label>
+                <input type="number" id="down-payment" value="20" />
+              </div>
+              <div class="input-group">
+                <label for="interest-rate">Interest Rate (%)</label>
+                <input
+                  type="number"
+                  id="interest-rate"
+                  value="4.5"
+                  step="0.01"
+                />
+              </div>
+              <div class="input-group">
+                <label for="loan-term">Loan Term (years)</label>
+                <input type="number" id="loan-term" value="30" />
+              </div>
+            </div>
+
+            <button class="calculate-button" id="mortgage-calculate">
+              Calculate
+            </button>
+
+            <div class="results-container" id="mortgage-results">
+              <div class="result-card">
+                <h3>Monthly Payment</h3>
+                <p class="result-value" id="monthly-payment">$1,520.06</p>
+              </div>
+              <div class="result-card">
+                <h3>Total Interest</h3>
+                <p class="result-value" id="total-interest">$307,220.80</p>
+              </div>
+              <div class="result-card">
+                <h3>Total Cost</h3>
+                <p class="result-value" id="total-cost">$547,220.80</p>
+              </div>
+            </div>
+
+            <div class="affiliate-container">
+              <h3>Ready to get pre-approved?</h3>
+              <p>Find the best mortgage rates from top lenders</p>
+              <a href="#" class="affiliate-button" id="mortgage-affiliate"
+                >Get Pre-Approved Now</a
+              >
+              <p class="disclaimer">
+                Free, no obligation rate quotes. No impact to your credit score.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cash Flow Calculator Tab -->
+          <div class="tab-content" id="cashflow-tab">
+            <h2>Rental Cash Flow Calculator</h2>
+            <div class="calculator-grid">
+              <div class="input-group">
+                <label for="monthly-rent">Monthly Rent ($)</label>
+                <input type="number" id="monthly-rent" value="2000" />
+              </div>
+              <div class="input-group">
+                <label for="vacancy-rate">Vacancy Rate (%)</label>
+                <input type="number" id="vacancy-rate" value="5" />
+              </div>
+              <div class="input-group">
+                <label for="property-tax">Annual Property Tax ($)</label>
+                <input type="number" id="property-tax" value="3600" />
+              </div>
+              <div class="input-group">
+                <label for="insurance">Annual Insurance ($)</label>
+                <input type="number" id="insurance" value="1200" />
+              </div>
+              <div class="input-group">
+                <label for="maintenance">Maintenance (%)</label>
+                <input type="number" id="maintenance" value="5" />
+              </div>
+              <div class="input-group">
+                <label for="capex">Capital Expenditures (%)</label>
+                <input type="number" id="capex" value="5" />
+              </div>
+              <div class="input-group">
+                <label for="management">Property Management (%)</label>
+                <input type="number" id="management" value="8" />
+              </div>
+              <div class="input-group">
+                <label for="utilities">Monthly Utilities ($)</label>
+                <input type="number" id="utilities" value="0" />
+              </div>
+            </div>
+
+            <button class="calculate-button" id="cashflow-calculate">
+              Calculate Cash Flow
+            </button>
+
+            <div class="results-container" id="cashflow-results">
+              <div class="result-card">
+                <h3>Monthly Income</h3>
+                <p class="result-value" id="monthly-income">$1,900.00</p>
+              </div>
+              <div class="result-card">
+                <h3>Monthly Expenses</h3>
+                <p class="result-value" id="monthly-expenses">$1,060.00</p>
+              </div>
+              <div class="result-card">
+                <h3>Monthly Cash Flow</h3>
+                <p class="result-value" id="monthly-cashflow">$840.00</p>
+              </div>
+              <div class="result-card">
+                <h3>Annual Cash Flow</h3>
+                <p class="result-value" id="annual-cashflow">$10,080.00</p>
+              </div>
+            </div>
+
+            <div class="affiliate-container">
+              <h3>Need property management?</h3>
+              <p>Find top-rated property managers in your area</p>
+              <a
+                href="#"
+                class="affiliate-button"
+                id="property-manager-affiliate"
+                >Find Property Managers</a
+              >
+            </div>
+          </div>
+
+          <!-- ROI Analysis Tab -->
+          <div class="tab-content" id="roi-tab">
+            <h2>ROI Analysis Calculator</h2>
+            <div class="calculator-grid">
+              <div class="input-group">
+                <label for="purchase-price">Purchase Price ($)</label>
+                <input type="number" id="purchase-price" value="300000" />
+              </div>
+              <div class="input-group">
+                <label for="closing-costs">Closing Costs ($)</label>
+                <input type="number" id="closing-costs" value="5000" />
+              </div>
+              <div class="input-group">
+                <label for="rehab-budget">Rehab Budget ($)</label>
+                <input type="number" id="rehab-budget" value="25000" />
+              </div>
+              <div class="input-group">
+                <label for="annual-cashflow">Annual Cash Flow ($)</label>
+                <input type="number" id="annual-cashflow-input" value="10080" />
+              </div>
+              <div class="input-group">
+                <label for="appreciation-rate">Annual Appreciation (%)</label>
+                <input type="number" id="appreciation-rate" value="3" />
+              </div>
+              <div class="input-group">
+                <label for="investment-period">Investment Period (years)</label>
+                <input type="number" id="investment-period" value="5" />
+              </div>
+            </div>
+
+            <button class="calculate-button" id="roi-calculate">
+              Calculate ROI
+            </button>
+
+            <div class="results-container" id="roi-results">
+              <div class="result-card">
+                <h3>Total Investment</h3>
+                <p class="result-value" id="total-investment">$90,000.00</p>
+              </div>
+              <div class="result-card">
+                <h3>Cash-on-Cash Return</h3>
+                <p class="result-value" id="cash-on-cash">11.20%</p>
+              </div>
+              <div class="result-card">
+                <h3>5-Year ROI</h3>
+                <p class="result-value" id="total-roi">87.6%</p>
+              </div>
+              <div class="result-card">
+                <h3>Annualized ROI</h3>
+                <p class="result-value" id="annualized-roi">13.4%</p>
+              </div>
+            </div>
+
+            <div class="affiliate-container">
+              <h3>Ready to find your next investment property?</h3>
+              <p>Browse top investment properties in your target market</p>
+              <a
+                href="#"
+                class="affiliate-button"
+                id="property-search-affiliate"
+                >Find Investment Properties</a
+              >
+            </div>
+          </div>
+
+          <!-- Rehab Estimator Tab -->
+          <div class="tab-content" id="rehab-tab">
+            <h2>Rehab Cost Estimator</h2>
+
+            <div class="rehab-categories">
+              <div class="rehab-category">
+                <h3>Exterior</h3>
+                <div class="rehab-item">
+                  <label for="roof">Roof</label>
+                  <select id="roof">
+                    <option value="0">No Work Needed</option>
+                    <option value="800">Minor Repairs</option>
+                    <option value="3000">Partial Replacement</option>
+                    <option value="8000">Full Replacement</option>
+                  </select>
+                </div>
+                <div class="rehab-item">
+                  <label for="siding">Siding/Exterior</label>
+                  <select id="siding">
+                    <option value="0">No Work Needed</option>
+                    <option value="1000">Paint Only</option>
+                    <option value="3500">Partial Replacement</option>
+                    <option value="12000">Full Replacement</option>
+                  </select>
+                </div>
+                <div class="rehab-item">
+                  <label for="landscaping">Landscaping</label>
+                  <select id="landscaping">
+                    <option value="0">No Work Needed</option>
+                    <option value="500">Basic Cleanup</option>
+                    <option value="2500">Moderate Landscaping</option>
+                    <option value="7000">Complete Overhaul</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="rehab-category">
+                <h3>Interior</h3>
+                <div class="rehab-item">
+                  <label for="kitchen">Kitchen</label>
+                  <select id="kitchen">
+                    <option value="0">No Work Needed</option>
+                    <option value="2000">Minor Updates</option>
+                    <option value="8000">Moderate Remodel</option>
+                    <option value="25000">Complete Renovation</option>
+                  </select>
+                </div>
+                <div class="rehab-item">
+                  <label for="bathrooms">Bathrooms</label>
+                  <select id="bathrooms">
+                    <option value="0">No Work Needed</option>
+                    <option value="1500">Minor Updates</option>
+                    <option value="5000">Moderate Remodel</option>
+                    <option value="15000">Complete Renovation</option>
+                  </select>
+                </div>
+                <div class="rehab-item">
+                  <label for="flooring">Flooring</label>
+                  <select id="flooring">
+                    <option value="0">No Work Needed</option>
+                    <option value="1500">Partial Replacement</option>
+                    <option value="4500">Complete Replacement</option>
+                    <option value="12000">Premium Upgrade</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="rehab-category">
+                <h3>Systems</h3>
+                <div class="rehab-item">
+                  <label for="hvac">HVAC</label>
+                  <select id="hvac">
+                    <option value="0">No Work Needed</option>
+                    <option value="1200">Minor Repairs</option>
+                    <option value="4000">Partial Replacement</option>
+                    <option value="10000">Full Replacement</option>
+                  </select>
+                </div>
+                <div class="rehab-item">
+                  <label for="plumbing">Plumbing</label>
+                  <select id="plumbing">
+                    <option value="0">No Work Needed</option>
+                    <option value="800">Minor Repairs</option>
+                    <option value="3500">Moderate Updates</option>
+                    <option value="9000">Complete Replacement</option>
+                  </select>
+                </div>
+                <div class="rehab-item">
+                  <label for="electrical">Electrical</label>
+                  <select id="electrical">
+                    <option value="0">No Work Needed</option>
+                    <option value="1000">Minor Updates</option>
+                    <option value="4000">Partial Replacement</option>
+                    <option value="12000">Complete Rewiring</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button class="calculate-button" id="rehab-calculate">
+              Calculate Rehab Costs
+            </button>
+
+            <div class="results-container" id="rehab-results">
+              <div class="result-card large">
+                <h3>Estimated Rehab Cost</h3>
+                <p class="result-value" id="total-rehab-cost">$0.00</p>
+              </div>
+            </div>
+
+            <div class="affiliate-container">
+              <h3>Need reliable contractors?</h3>
+              <p>
+                Find top-rated contractors in your area with verified reviews
+              </p>
+              <a href="#" class="affiliate-button" id="contractor-affiliate"
+                >Find Contractors Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h3>Why Trust Our Calculator?</h3>
+          <ul>
+            <li>Used by 50,000+ investors monthly</li>
+            <li>Calculations match industry standards</li>
+            <li>Completely free to use</li>
+            <li>Updated with latest investment metrics</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card lead-capture">
+          <h3>Get Your Free Investment Report</h3>
+          <p>
+            Download a personalized PDF analysis of your property investment
+          </p>
+          <form id="lead-form">
+            <input type="email" placeholder="Your Email" required />
+            <button type="submit">Send My Report</button>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2023 Real Estate Investment Calculator. All rights reserved.
+        </p>
+        <p class="disclaimer">
+          This calculator is for educational purposes only. Always consult with
+          qualified professionals before making investment decisions.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/calculator.js"></script>
+  </body>
+</html>
