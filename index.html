@@ -5,6 +5,19 @@
       name="impact-site-verification"
       value="0975514b-0cb8-45f2-9c7e-a9bc2e7e5853"
     />
+    <!-- Google Analytics (GA4) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX"); // Replace G-XXXXXXXXXX with your actual GA4 measurement ID
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -15,6 +28,49 @@
       name="description"
       content="Free professional-grade calculator for real estate investors. Analyze cash flow, ROI, cap rates and more for your next property investment."
     />
+    <!-- Additional SEO Meta Tags -->
+    <meta
+      name="keywords"
+      content="real estate calculator, investment property calculator, cash flow calculator, ROI calculator, cap rate calculator, real estate investing, rental property calculator, mortgage calculator, rehab cost estimator"
+    />
+    <meta name="author" content="Real Estate Investment Calculator" />
+    <meta
+      property="og:title"
+      content="Real Estate Investment Calculator | Analyze Property Investments Like a Pro"
+    />
+    <meta
+      property="og:description"
+      content="Free professional-grade calculator for real estate investors. Analyze cash flow, ROI, cap rates and more for your next property investment."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://vandyand.github.io/real-estate-calculator/"
+    />
+    <meta
+      property="og:image"
+      content="https://vandyand.github.io/real-estate-calculator/img/calculator-preview.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Real Estate Investment Calculator",
+        "description": "Free professional-grade calculator for real estate investors. Analyze cash flow, ROI, cap rates and more for your next property investment.",
+        "url": "https://vandyand.github.io/real-estate-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": "Mortgage Calculator, Cash Flow Analysis, ROI Calculator, Rehab Cost Estimator"
+      }
+    </script>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -236,7 +292,7 @@
               <h3>Ready to find your next investment property?</h3>
               <p>Browse top investment properties in your target market</p>
               <a
-                href="https://www.roofstock.com/?utm_source=affiliate&utm_medium=cpc&utm_campaign=reic"
+                href="https://www.redfin.com/buy-a-home/real-estate-investors?utm_source=affiliate&utm_campaign=reic"
                 class="affiliate-button"
                 id="property-search-affiliate"
                 >Find Investment Properties</a
@@ -360,7 +416,7 @@
                 Find top-rated contractors in your area with verified reviews
               </p>
               <a
-                href="https://www.homeadvisor.com/spa/affiliates/?cid=39286502"
+                href="https://www.thumbtack.com/pro-center/affiliate-partners?affiliate=reic"
                 class="affiliate-button"
                 id="contractor-affiliate"
                 >Find Contractors Now</a

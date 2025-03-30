@@ -386,20 +386,41 @@ function setupLeadCapture() {
   }
 }
 
-// Analytics Tracking Functions (would integrate with Google Analytics, etc. in production)
+// Analytics Tracking Functions (integrated with Google Analytics)
 function trackCalculation(calculatorType, data) {
   console.log(`Calculator used: ${calculatorType}`, data);
-  // In production: gtag('event', 'calculation', { calculatorType, ...data });
+  // Send event to Google Analytics
+  if (typeof gtag === "function") {
+    gtag("event", "calculation", {
+      event_category: "calculator",
+      event_label: calculatorType,
+      value: data.propertyPrice || 0,
+    });
+  }
 }
 
 function trackAffiliateLinkClick(affiliateType, data = {}) {
   console.log(`Affiliate link clicked: ${affiliateType}`, data);
-  // In production: gtag('event', 'affiliate_click', { affiliateType, ...data });
+  // Send event to Google Analytics
+  if (typeof gtag === "function") {
+    gtag("event", "affiliate_click", {
+      event_category: "outbound",
+      event_label: affiliateType,
+      value: data.propertyPrice || data.totalRehabCost || 0,
+    });
+  }
 }
 
 function trackLeadCapture(email) {
   console.log("Lead captured", { emailProvided: !!email });
-  // In production: gtag('event', 'lead_capture', { emailProvided: !!email });
+  // Send event to Google Analytics
+  if (typeof gtag === "function") {
+    gtag("event", "lead_capture", {
+      event_category: "engagement",
+      event_label: "email_subscription",
+      value: 1,
+    });
+  }
 }
 
 // Utility functions
