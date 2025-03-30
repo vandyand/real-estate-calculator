@@ -442,8 +442,17 @@
           <p>
             Download a personalized PDF analysis of your property investment
           </p>
-          <form id="lead-form">
-            <input type="email" placeholder="Your Email" required />
+          <form
+            id="lead-form"
+            action="https://formspree.io/f/xjvqvvwv"
+            method="POST"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
             <button type="submit">Send My Report</button>
           </form>
         </div>

@@ -366,22 +366,25 @@ function setupLeadCapture() {
   const leadForm = document.getElementById("lead-form");
   if (leadForm) {
     leadForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+      // Don't prevent default - let the form submit to Formspree
 
       const email = this.querySelector('input[type="email"]').value;
 
-      // In a real implementation, you'd send this to your server or email service
-      // For demo purposes, we'll just log it
+      // Track the submission event in Google Analytics
+      if (typeof gtag === "function") {
+        gtag("event", "lead_capture", {
+          event_category: "engagement",
+          event_label: "email_subscription",
+          value: 1,
+        });
+      }
+
+      // Note: We don't need to handle the success message here
+      // Formspree will redirect to a thank you page or back to our site
+
       console.log("Lead captured:", email, {
         timestamp: new Date().toISOString(),
       });
-
-      // Show success message
-      leadForm.innerHTML =
-        '<p class="success">Thank you! Your report will be emailed shortly.</p>';
-
-      // Track lead capture
-      trackLeadCapture(email);
     });
   }
 }
@@ -413,14 +416,8 @@ function trackAffiliateLinkClick(affiliateType, data = {}) {
 
 function trackLeadCapture(email) {
   console.log("Lead captured", { emailProvided: !!email });
-  // Send event to Google Analytics
-  if (typeof gtag === "function") {
-    gtag("event", "lead_capture", {
-      event_category: "engagement",
-      event_label: "email_subscription",
-      value: 1,
-    });
-  }
+  // This is now handled directly in the form submission handler
+  // Keeping this function for backwards compatibility
 }
 
 // Utility functions
